@@ -3,11 +3,9 @@
 Para este proyecto, se desarrolló una aplicación web simple que permita realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) en una base de datos MySQL utilizando PHP.
 
 1. Landing Page de Alojamientos:
-
-  - La aplicación debe tener una página principal (landing page) que muestre los alojamientos. Estos alojamientos deben ser precargados desde la base de datos y se mostrarán de manera atractiva en la página principal. 
+    - La aplicación debe tener una página principal (landing page) que muestre los alojamientos. Estos alojamientos deben ser precargados desde la base de datos y se mostrarán de manera atractiva en la página principal. 
 
 2. Crear una Cuenta e Iniciar Sesión:
-
   - Debe existir la funcionalidad para que los usuarios puedan crear una cuenta en la aplicación y luego iniciar sesión con sus credenciales. 
 
 3. Vista de Cuenta de Usuario:
