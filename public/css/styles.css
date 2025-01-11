@@ -1,0 +1,166 @@
+* {
+  color: white;
+}
+
+/* ****************************************************** */
+/******************** ESTILOS DEL HOME ********************/
+/* ****************************************************** */
+
+.home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/backgroundForestHome.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+.menu {
+  display: flex;
+  /* justify-content: center; */
+  padding: 20px; /* Espaciado opcional */
+}
+
+.menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 40px; /* Espaciado entre los elementos del menú */
+}
+
+.menu nav ul li {
+  display: inline;
+}
+
+.menu nav ul li a {
+  font-size: 25px;
+  text-decoration: none;
+  /*color: #000; /* Color del texto */
+  font-weight: bold; /* Negrita opcional */
+}
+
+.menu nav ul li a.active {
+  border-bottom: 2px solid #ffffff; /* Subrayado */
+}
+
+.info {
+  display: flex;
+}
+
+.homeleft {
+  width: 35%;
+  height: calc(100vh - 100px); /* Altura total del body menos el padding */
+  padding: 10px 0px 10px 20px;
+}
+
+.homeleftSection1 {
+  align-content: center;
+  height: 80%;
+}
+
+.tittleHomeLeft {
+  font-size: 70px;
+  font-weight: bold; /* Negrita */
+}
+
+.subTittleLeftHome1 {
+  font-size: 20px;
+  letter-spacing: 4.8px;
+}
+
+.homeleftSection2 {
+  align-content: center;
+  height: 20%;
+}
+
+.bubTittleLeftHome2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.homeright {
+  width: 65%;
+  padding: 10px;
+  height: calc(100vh - 100px); /* Altura total del body menos el padding */
+}
+
+.homerightUp{
+  height: 50%;
+}
+
+.tittleRightHome {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.subTittleRightHome{
+  padding:  20px 200px 10px 0px;
+  font-size: 18px;
+}
+
+.buttons button{
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.buttons button:hover{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.homerightDown {
+  display: flex;
+  height: 50%;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  align-content: center;
+  width: 18%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+
+.card p{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-hoteles {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/backgroundHotel.jpg");
+}
+
+.card-casas {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/backgroundCasa.jpg");
+}
+
+.card-cabanas {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/backgroundCabaña.jpg");
+}
