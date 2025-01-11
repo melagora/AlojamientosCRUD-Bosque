@@ -1,5 +1,7 @@
 # CRUD de Alojamientos: Gestión de Usuarios y Administrador
 
+![image](https://github.com/user-attachments/assets/3e1ffb1b-2c15-44ca-91c7-e0894ef227b2)
+
 Para este proyecto, se desarrolló una aplicación web simple que permita realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) en una base de datos MySQL utilizando PHP.
 
 1. Landing Page de Alojamientos:
