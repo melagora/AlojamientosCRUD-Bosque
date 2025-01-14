@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alojamientos Naturales</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="public/css/stylesIndex.css">
+    <link rel="stylesheet" href="public/css/stylesMenu.css">
 </head>
 
 <body class="home">
-    <?php include '../src/components/menu.php'; ?>
+    <?php include 'src/components/menu.php'; ?>
 
     <section class="info">
         <section class="homeleft">
@@ -29,8 +30,8 @@
                     Guarda tus alojamientos favoritos, inspírate con las recomendaciones de otros viajeros y planea tu
                     próxima aventura. Tus escapadas perfectas, siempre a mano.</p>
                 <div class="buttons">
-                    <button onclick="location.href='../src/views/login.php'">Iniciar Sesión</button>
-                    <button onclick="location.href='../src/views/register.php'">Crear Cuenta</button>
+                    <button onclick="location.href='src/views/login.php'">Iniciar Sesión</button>
+                    <button onclick="location.href='src/views/register.php'">Crear Cuenta</button>
                 </div>
             </section>
             <section class="homerightDown">

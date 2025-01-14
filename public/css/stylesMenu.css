@@ -1,0 +1,28 @@
+.menu {
+    display: flex;
+    /* justify-content: center; */
+    padding: 20px; /* Espaciado opcional */
+  }
+  
+  .menu nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 40px; /* Espaciado entre los elementos del menú */
+  }
+  
+  .menu nav ul li {
+    display: inline;
+  }
+  
+  .menu nav ul li a {
+    font-size: 25px;
+    text-decoration: none;
+    /*color: #000; /* Color del texto */
+    font-weight: bold; /* Negrita opcional */
+  }
+  
+  .menu nav ul li a.active {
+    border-bottom: 2px solid #ffffff; /* Subrayado */
+  }
