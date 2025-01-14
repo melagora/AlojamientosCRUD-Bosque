@@ -24,3 +24,7 @@ Para este proyecto, se desarrolló una aplicación web simple que permita realiz
 
 5. Usuario Administrador:
     Existe un usuario de tipo administrador, el cual tiene privilegios especiales. El administrador solo podrá agregar alojamientos a la base de datos, no tendrá la capacidad de eliminarlos.
+
+# DIAGRAMA ENTIDAD RELACION MYSQL
+
+![image](https://github.com/user-attachments/assets/2b1a303a-da65-4e45-8248-25b87eba2118)
