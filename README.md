@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/dd7056ac-1182-4f23-881f-d5b2674fdf92)# CRUD de Alojamientos: Gestión de Usuarios y Administrador
+# CRUD de Alojamientos: Gestión de Usuarios y Administrador
 
 ![image](https://github.com/user-attachments/assets/3e1ffb1b-2c15-44ca-91c7-e0894ef227b2)
 
@@ -15,7 +15,7 @@ Para este proyecto, se desarrolló una aplicación web simple que permita realiz
    
 ![image](https://github.com/user-attachments/assets/718cbb7b-ca58-4872-9c38-72a13154d47a)
 
-![Uploading Captura de pantalla 2025-01-15 192915.png…]()
+![image](https://github.com/user-attachments/assets/dd7056ac-1182-4f23-881f-d5b2674fdf92)
 
 3. Vista de Cuenta de Usuario:
     Una vez que el usuario haya iniciado sesión, debe ser redirigido a una vista de cuenta de usuario. En esta vista, el usuario puede seleccionar libremente alojamientos, los cuales se reflejarán en su cuenta de usuario. 
