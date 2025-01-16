@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = trim($_POST['nombre']);
     $correo = trim($_POST['correo']);
     $telefono = trim($_POST['telefono']);
-    $contrasena = trim($_POST['password']); // Cambiar "contrasena" a "password" para coincidir con el formulario
+    $contrasena = trim($_POST['password']); // Contraseña del formulario tal cual
 
     // Otros datos a insertar en la base de datos
     $tipo = 'usuario';
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vincular parámetros
         $stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':correo', $correo);
-        $stmt->bindParam(':contrasena', $contrasena); // Contraseña sin hash
+        $stmt->bindParam(':contrasena', $contrasena); // Guardar contraseña sin hash
         $stmt->bindParam(':tipo', $tipo);
         $stmt->bindParam(':telefono', $telefono);
         $stmt->bindParam(':fecha_registro', $fecha_registro);
@@ -36,21 +36,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Ejecutar y comprobar si se insertó correctamente
         if ($stmt->execute()) {
-            // Establecer variables de sesión
-            $_SESSION['usuario_id'] = $pdo->lastInsertId();
-            $_SESSION['nombre'] = $nombre;
-            $_SESSION['correo'] = $correo;
-            $_SESSION['tipo'] = $tipo;
-            $_SESSION['estado'] = $estado;
+            // Guardar información del usuario en la sesión
+            $_SESSION['usuario'] = [
+                'id' => $pdo->lastInsertId(),
+                'nombre' => $nombre,
+                'correo' => $correo,
+                'tipo' => $tipo,
+                'estado' => $estado,
+            ];
 
-            // Mostrar mensaje y redirigir automáticamente
+            // Redirigir al perfil del usuario con un mensaje de éxito
             echo "<script>
-                    alert('Registro exitoso. Bienvenido, " . htmlspecialchars($nombre) . "!');
-                    window.location.href = '../views/usuario.php';
+                    alert('Registro exitoso. ¡Bienvenido, " . htmlspecialchars($nombre) . "!');
+                    window.location.href = '../../index.php';
                   </script>";
             exit;
         } else {
-            echo "Error al registrar el usuario.<br>";
+            echo "<script>
+                    alert('Ocurrió un error al registrar tu cuenta. Inténtalo de nuevo.');
+                    window.location.href = '../views/register.php';
+                  </script>";
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();

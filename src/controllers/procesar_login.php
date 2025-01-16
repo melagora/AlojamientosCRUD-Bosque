@@ -1,5 +1,6 @@
 <?php
-// Incluir el archivo de configuración para la conexión a la base de datos
+session_start(); // Iniciar sesión
+
 require_once './../../config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         // Consulta SQL para obtener los datos del usuario
-        $sql = "SELECT id, nombre, contrasena FROM usuario WHERE correo = :correo";
+        $sql = "SELECT id, nombre, contrasena, estado FROM usuario WHERE correo = :correo";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':correo', $correo);
         $stmt->execute();
@@ -17,12 +18,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->rowCount() == 1) {
             $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Comparar las contraseñas directamente
+            // Comparar las contraseñas directamente (mejorar con hash en producción)
             if ($contrasena === $usuario['contrasena']) {
-                // Inicio de sesión exitoso
+                // Verificar si el estado es inactivo y actualizarlo
+                if ($usuario['estado'] === 'inactivo') {
+                    $updateSql = "UPDATE usuario SET estado = 'activo' WHERE id = :id";
+                    $updateStmt = $pdo->prepare($updateSql);
+                    $updateStmt->bindParam(':id', $usuario['id']);
+                    $updateStmt->execute();
+                }
+
+                // Guardar datos en la sesión
+                $_SESSION['usuario'] = [
+                    'id' => $usuario['id'],
+                    'nombre' => $usuario['nombre'],
+                    'estado' => 'activo',
+                ];
+
+                // Redirigir al perfil del usuario
                 echo "<script>
                     alert('Inicio de sesión exitoso. ¡Bienvenido, " . htmlspecialchars($usuario['nombre']) . "!');
-                    window.location.href = '../views/usuario.php'; // Cambia a la página deseada tras el login
+                    window.location.href = '../../index.php';
                 </script>";
             } else {
                 // Contraseña incorrecta
